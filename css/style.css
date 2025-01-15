@@ -1,19 +1,54 @@
+<<<<<<< HEAD
 .main-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+=======
+/* body{
+    background-image: url(../img/buble.png);
+    background-color: rgba(255, 255, 255, 0);
+} */
+
+body{
+    background-color: #5f6a74;
+    background-size: cover;
+}
+.main-header{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    top: 0px;
+}
+h1{
+    color: white;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    margin-left: 60px;
+    line-height: 2.5;
+}
+
+>>>>>>> 6f325fb (project-fiks)
 .logo-icon{
     border-radius: 50%;
     height: 50px;
     width: 50px;
+<<<<<<< HEAD
     background-image: url(https://picsum.photos/200);
+=======
+    background-image: url(../img/logo1.png);
+>>>>>>> 6f325fb (project-fiks)
     background-size: cover;
     background-position: center;
 }
 
 nav{
     display: flex;
+<<<<<<< HEAD
 }
 
 .left-rounded{
@@ -35,6 +70,654 @@ nav>a{
     background-image: url(https://picsum.photos/1000);
     background-size: cover;
     background-position: center;
+=======
+    justify-content: center;
+    margin-left: 27rem;
+    gap: 10px;
+}
+
+nav>a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ikon dan teks berada di kiri saat default */
+    border: 1px solid black;
+    padding: 8px 16px;
+    color: black;
+    text-decoration: none;
+    border-radius: 19px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+    width: fit-content;
+
+}
+
+
+nav > a .icon {
+    display: inline-block;
+    transition: transform 0.3s ease, margin-left 0.3s ease; 
+    margin-right: 10px;
+}
+
+nav > a span.text {
+    transition: opacity 0.3s ease;
+    opacity: 1; 
+}
+
+nav > a.active {
+    background-color: black;
+    color: white;
+    flex-direction: row-reverse; /* Membalikkan urutan ikon dan teks */
+    justify-content: flex-start;
+}
+
+nav > a.active .icon {
+    transform: translateX(50%); 
+}
+
+nav > a.active span.text {
+    opacity: 1; 
+    /* Munculkan teks */
+}
+
+/* Gaya untuk pop-up */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    visibility: hidden; /* Default tidak terlihat */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+.popup {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.popup input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Untuk membuat pop-up terlihat */
+.popup-overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.banner-image{
+    height: 450px;
+    background-position: center;
+    background-size: cover;  /* Pastikan gambar menutupi seluruh area */
+    background-repeat: no-repeat;  /* Mencegah gambar mengulang */
+    overflow: hidden; /* Mencegah elemen keluar dari batas */
+    cursor: pointer; /* Menunjukkan elemen dapat berinteraksi */
+}
+
+/* Penataan untuk home-page */
+#home-page {
+    text-align: center;
+
+}
+
+h1{
+    font-size: 2.5rem;
+}
+.welcome-text {
+    font-size: 3rem; /* Ukuran font lebih kecil untuk welcome */
+    color: #f1ebeb; /* Warna sedikit lebih terang untuk welcome */
+}
+
+/* Container utama untuk banner */
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Sesuaikan tinggi kontainer */
+    overflow-y: auto; /* Mengizinkan scroll vertikal */
+    scroll-snap-type: y mandatory; /* Mengatur scroll agar gambar berhenti pada posisi tertentu */
+}
+
+/* Flexbox untuk menampung gambar secara vertikal */
+.banner-images {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start; /* Gambar akan berhenti di posisi paling atas */
+    width: 100%;
+}
+/* Gaya untuk setiap gambar dalam banner */
+.banner-image {
+    width: 100%; /* Setiap gambar akan memakan 100% lebar kontainer */
+    height: 450px;
+    background-position: center;
+    background-size: cover; /* Pastikan gambar menutupi seluruh area */
+    background-repeat: no-repeat;
+    position: relative; /* Agar overlay bisa ditempatkan di atas gambar */
+    scroll-snap-align: start; /* Gambar akan berhenti di posisi paling atas */
+}
+
+.banner-image:hover::before {
+    filter: blur(5px); /* Efek blur hanya pada gambar */
+}
+
+/* Overlay yang muncul dari bawah */
+.banner-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); /* Warna hitam transparan untuk overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%; /* Menyesuaikan tinggi overlay dengan tinggi gambar */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, bottom 0.3s ease; /* Efek munculnya overlay */
+}
+
+
+/* Menampilkan overlay pada gambar yang aktif */
+.banner-image:hover .banner-overlay {
+    bottom: 0; /* Geser overlay ke atas */
+    opacity: 1;
+    visibility: visible;
+}
+
+.banner-overlay p {
+    max-width: 600px; /* Batasi lebar teks */
+    margin: 16px 0; /* Jarak antar paragraf */
+    line-height: 1.5; /* Jarak antar baris */
+}
+
+.banner-overlay .headline {
+    font-size: 3.5rem; /* Ukuran teks lebih besar */
+    font-weight: bold; /* Jadikan teks bold */
+    text-align: left; 
+    margin-bottom: 20px; /* Beri jarak dengan paragraf berikutnya */
+}
+
+/* Menampilkan overlay pada gambar yang aktif */
+.banner-container .banner-image.active .banner-overlay {
+    bottom: 0; /* Geser overlay ke atas */
+    opacity: 1;
+    visibility: visible;
+}
+
+.banner-image:hover .banner-overlay {
+    opacity: 1; /* Tampilkan overlay */
+    visibility: visible;
+}
+
+
+.banner-overlay p:not(.headline) {
+    margin-top: 20px; /* Jarak antara tombol dan paragraf berikutnya */
+}
+
+/* Menampilkan overlay pada gambar yang aktif */
+.banner-container .banner-image.active .banner-overlay {
+    bottom: 0; /* Geser overlay ke atas */
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.news-ticker {
+    display: flex;
+    overflow: hidden; /* Menyembunyikan teks di luar area */
+    background-color: #fff; /* Latar belakang untuk teks */
+    padding: 10px 0;
+    border-top: 1px solid #ddd; /* Garis pembatas atas */
+    border-bottom: 1px solid #ddd; /* Garis pembatas bawah */
+}
+
+.news-ticker span {
+    display: inline-block;
+    white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
+    padding: 0 20px; /* Jarak antar teks */
+    font-size: 0.9rem; /* Ukuran font kecil */
+    color: #555; /* Warna teks */
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%); /* Mulai di luar layar kanan */
+    }
+    100% {
+        transform: translateX(-100%); /* Bergerak keluar layar kiri */
+    }
+}
+
+.news-ticker {
+    position: relative;
+    overflow: hidden;
+}
+
+.news-ticker span {
+    animation: ticker 1s linear infinite; /* Gerakan horizontal tanpa henti */
+}
+
+#our-profile{
+    margin-left: 10px;
+}
+/* Sidebar Styles */
+#sidebar {
+    margin-top: 5px; /* Memberikan jarak antara Our Profile dan Sidebar */
+    border-radius: 8px;
+    padding: 10px;
+    width: 70%;
+    max-width: 30%;
+    flex: 1;
+
+    
+}
+
+.learn-more {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.search-title {
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.search-input {
+    padding: 8px;
+    width: 45%;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.sidebar-button {
+    padding: 12px;
+    width: 50%;
+    font-size: 14px;
+    background-color: #281759;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+.sidebar-button:hover {
+    background-color: #4e44aa;
+}
+
+/* Level Section */
+.level-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f7f6f6;
+}
+
+.level-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.level-buttons .sidebar-button {
+    font-size: 12px;
+}
+
+
+/* Styling for the profile section */
+#profile-section {
+    display: flex;
+    gap: 10px; /* Jarak antar elemen */
+    padding: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.content-our-profile {
+    height: 500px;
+    display: flex;
+
+}
+
+/* Profile information */
+.profile-info {
+    flex: 1;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+/* Program recommendations section (to hold the program boxes) */
+#program-recommendations {
+    display: flex;
+    flex-wrap: wrap; /* Membuat kotak program bisa berpindah ke baris berikutnya */
+    gap: 10px;
+    max-width: 70%;
+    flex-grow: 1;
+}
+
+/* Program box styles */
+.program-box {
+    margin-top: 40px;
+    width: 30%;
+    height: 80%;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+
+/* Button styles */
+button {
+    background-color: #221373;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4e44aa;
+}
+
+/* Menata bagian Highest Rating */
+.highest-rating-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.highest-rating-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.ratings {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.rating {
+    display: flex;
+    align-items: center;  /* Menyusun gambar dan teks sejajar secara vertikal */
+    justify-content: center;
+}
+
+.rating img {
+    width: 100px;  /* Mengatur lebar gambar logo */
+    height: auto;
+    display: flex;
+    margin-right: 10px; /* Memberikan jarak antara logo dan teks */
+}
+
+.rating p {
+    font-size: 1rem;
+    margin: 0;
+    margin-right: 20px;
+    color: white;
+}
+
+/* Background untuk portofolio */
+.portfolio-background {
+    background-image: url('./img/your-background-image.jpg'); /* Ganti dengan gambar yang sesuai */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: left;
+    color: white;
+}
+
+.portfolio-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-left: 50px; /* Memberikan ruang di kiri untuk teks */
+    margin: 0;
+}
+
+.content-portofolio{
+    height: 700px;
+}
+
+.container{
+    background-color: #1a3653;
+    flex-direction: row-reverse; /* Menempatkan gambar di sebelah kanan */
+    align-items: center; /* Mengatur posisi vertikal elemen */
+    justify-content: space-between; /* Memberikan jarak antara teks dan gambar */
+    height: 80%;
+}
+/* Memastikan teks judul berada di tengah vertikal */
+.portfolio-background h2 {
+    font-size: 45px;
+    margin-right: 500px;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Memastikan tinggi background memenuhi ruang */
+}
+
+/* Efek muncul dari bawah ke atas untuk tulisan */
+.additional-text {
+    text-align: right; /* Mengatur teks agar rata kanan */
+    margin-left: 450px;
+    margin-right: 50px;
+    margin-top: 0px; /* Memberikan jarak atas */
+    font-size: 1.5rem; /* Ukuran font yang pas */
+    font-weight: normal;
+    color: #faf9f9; /* Warna teks */
+    opacity: 0; /* Mulai dengan teks yang tidak terlihat */
+    transform: translateY(50px); /* Posisi awal teks di bawah */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Efek transisi untuk muncul */
+}
+
+/* Menambahkan efek animasi muncul dari bawah saat konten terlihat */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Posisi teks di bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Gerakan teks ke posisi semula */
+    }
+}
+
+/* Efek muncul saat elemen berada dalam viewport */
+.content-portofolio .additional-text.show {
+    animation: slideUp 1s forwards; /* Panggil animasi ketika konten muncul */
+}
+
+/* Efek untuk portfolio background */
+.portfolio-background {
+    opacity: 0;
+    transform: translateY(-50px); /* Posisikan elemen sedikit di atas */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Efek muncul saat konten sudah ditampilkan */
+.content-portofolio .portfolio-background.show {
+    opacity: 1; /* Tampilkan elemen */
+    transform: translateY(0); /* Gerakan elemen ke posisi semula */
+}
+
+
+/* Section Title */
+#message-us h1 {
+    text-align: left;
+    color: #f7f4f4;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Form and Output Wrapper */
+.form-output-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* Form Container */
+.message-form {
+    background: #211059;
+    padding: 15px;
+    margin-left: 50px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(47, 15, 129, 0.2);
+    width: 40%;
+    border: 3px solid #4f3ba8;
+}
+
+.message-form form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: white;
+}
+
+.message-form form input,
+.message-form form select,
+.message-form form textarea {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 2px solid rgba; /* Border ungu neon */
+    font-size: 0.9rem;
+    box-shadow: inset 2px 2px 5px rgba(138, 43, 226, 0.4);
+}
+
+.message-form form textarea {
+    height: 80px;
+    resize: none;
+}
+
+.message-form form button {
+    width: 100%;
+    padding: 8px;
+    background-color: #261a4b;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #efeeee;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px rgba(89, 43, 226, 0.7);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.message-form form button:hover {
+    background-color: #443c6e;
+    transform: scale(1.05);
+}
+
+/* Output Container */
+.message-output {
+    background: #090124;
+    padding: 15px;
+    border-radius: 15px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 20px rrgba(138, 43, 226, 0.7);
+    width: 40%;
+    border: 3px solid #4f3ba8;
+}
+
+.message-output h2 {
+    color: #ffffff;
+    font-size: 2rem; /* Ukuran font lebih besar */
+    text-align: center; /* Tengahkan teks */
+    margin-bottom: 20px; /* Tambahkan jarak bawah */
+
+}
+
+.message-output p {
+    font-size: 1.2rem; /* Perbesar ukuran font */
+    color: #ffffff; /* Tetap gunakan warna putih untuk kontras */
+    margin: 10px 0; /* Jarak antar elemen */
+}
+
+.message-output span {
+    font-weight: bold;
+    font-size: 1.3rem; /* Ukuran font untuk label sedikit lebih besar */
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .form-output-wrapper {
+        flex-direction: column; /* Susun vertikal untuk layar kecil */
+        gap: 20px;
+    }
+
+    .message-form,
+    .message-output {
+        width: 100%; /* Lebar penuh */
+    }
+}
+/* Hidden Class */
+.hidden {
+    display: none;
+>>>>>>> 6f325fb (project-fiks)
 }
 
 .content {
