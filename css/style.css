@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-.main-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-=======
 /* body{
     background-image: url(../img/buble.png);
     background-color: rgba(255, 255, 255, 0);
@@ -32,45 +25,17 @@ h1{
     line-height: 2.5;
 }
 
->>>>>>> 6f325fb (project-fiks)
 .logo-icon{
     border-radius: 50%;
     height: 50px;
     width: 50px;
-<<<<<<< HEAD
-    background-image: url(https://picsum.photos/200);
-=======
     background-image: url(../img/logo1.png);
->>>>>>> 6f325fb (project-fiks)
     background-size: cover;
     background-position: center;
 }
 
 nav{
     display: flex;
-<<<<<<< HEAD
-}
-
-.left-rounded{
-    border-radius: 12px 0 0 12px;
-}
-
-.right-rounded{
-    border-radius: 0 12px 12px 0 ;
-}
-nav>a{
-    border: 1px solid black;
-    padding: 8px;
-    color: black;
-    text-decoration: none;
-}
-
-.banner-image{
-    height: 450px;
-    background-image: url(https://picsum.photos/1000);
-    background-size: cover;
-    background-position: center;
-=======
     justify-content: center;
     margin-left: 27rem;
     gap: 10px;
@@ -717,7 +682,6 @@ button:hover {
 /* Hidden Class */
 .hidden {
     display: none;
->>>>>>> 6f325fb (project-fiks)
 }
 
 .content {
@@ -727,4 +691,119 @@ button:hover {
 
 footer{
     text-align: center;
+}
+
+/* Untuk layar kecil seperti smartphone */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Ukuran font lebih kecil untuk layar kecil */
+    }
+
+    .main-header {
+        flex-direction: column; /* Header berubah jadi kolom */
+        align-items: center; /* Pusatkan konten */
+    }
+
+    nav {
+        flex-direction: column; /* Navigasi vertikal */
+        margin-left: 0;
+        gap: 5px; /* Jarak antar menu lebih kecil */
+    }
+
+    nav > a {
+        width: 100%; /* Tombol menu memenuhi lebar layar */
+        justify-content: center; /* Ikon dan teks di tengah */
+    }
+
+    .banner-container {
+        height: auto; /* Sesuaikan tinggi banner */
+    }
+
+    .banner-image {
+        height: 250px; /* Tinggi gambar lebih kecil */
+    }
+
+    .sidebar-buttons,
+    .level-buttons {
+        width: 100%; /* Elemen sidebar memenuhi layar */
+    }
+
+    .content-our-profile {
+        flex-direction: column; /* Elemen berurutan vertikal */
+        height: auto; /* Tinggi fleksibel */
+    }
+
+    #program-recommendations {
+        flex-direction: column; /* Kotak program ditampilkan secara vertikal */
+        width: 100%;
+    }
+
+    .program-box {
+        width: 100%; /* Setiap kotak memenuhi lebar layar */
+    }
+
+    #message-us h1 {
+        font-size: 1.5rem; /* Sesuaikan ukuran heading */
+    }
+
+    .form-output-wrapper {
+        flex-direction: column; /* Formulir dan output diatur secara vertikal */
+        gap: 10px;
+    }
+
+    .message-form,
+    .message-output {
+        width: 100%; /* Formulir dan output memenuhi lebar layar */
+        margin: 0; /* Hapus margin */
+    }
+
+    .portfolio-background {
+        padding: 50px 10px; /* Kurangi padding untuk layar kecil */
+    }
+
+    .portfolio-title {
+        font-size: 1rem; /* Ukuran teks lebih kecil */
+    }
+
+    .additional-text {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 0.5rem; /* Ukuran teks lebih kecil */
+    }
+
+    .highest-rating-section h2 {
+        font-size: 1.5rem; /* Ukuran heading lebih kecil */
+    }
+
+    .ratings {
+        flex-direction: column; /* Rating disusun secara vertikal */
+    }
+
+    .rating img {
+        width: 50px; /* Ukuran gambar lebih kecil */
+    }
+}
+
+/* Untuk layar sangat kecil seperti ponsel (max 480px) */
+@media screen and (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.2rem; /* Ukuran heading lebih kecil */
+    }
+
+    .logo-text {
+        font-size: 1rem; /* Ukuran teks logo lebih kecil */
+        margin-left: 20px; /* Kurangi margin */
+    }
+
+    nav {
+        gap: 5px; /* Jarak antar menu lebih kecil */
+    }
+
+    .banner-image {
+        height: 200px; /* Tinggi banner lebih kecil */
+    }
+
+    .sidebar-button {
+        font-size: 12px; /* Teks tombol lebih kecil */
+    }
 }
